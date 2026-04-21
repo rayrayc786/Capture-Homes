@@ -116,7 +116,7 @@ export const homeData = {
           "Area Mapping"
         ],
         isPopular: false,
-        buttonText: "Request Quote"
+        buttonText: "Book Now"
       }
     ]
   },
@@ -131,7 +131,7 @@ export const homeData = {
   cta: {
     title: "READY TO ELEVATE YOUR LISTINGS?",
     subtitle: "Contact us today to discuss how we can enhance your real estate visual marketing strategy.",
-    buttonText: "Get in Touch"
+    buttonText: "Book Now"
   },
   logoStrip: [
     "RAY WHITE", "BAYLEYS", "HARCOURTS", "BARFOOT", "RE/MAX"

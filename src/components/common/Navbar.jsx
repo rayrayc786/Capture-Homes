@@ -27,7 +27,7 @@ const Navbar = () => {
     { label: 'Gallery', href: '/#gallery', isHash: true },
     { label: 'Price List', href: '/#pricing', isHash: true },
     { label: 'About Us', href: '/#about', isHash: true },
-    { label: 'Book Now', href: '/book-now', isHash: false },
+    // { label: 'Book Now', href: '/book-now', isHash: false },
     { label: 'Contact Us', href: '/#contact', isHash: true }
   ];
 
@@ -84,7 +84,7 @@ const Navbar = () => {
             >
               {isDark ? <Sun size={18} /> : <Moon size={18} />}
             </button>
-            <Button variant="primary" className="!px-6 !py-2.5 !text-xs">Inquire</Button>
+            <Button to="/book-now" variant="primary" className="!px-6 !py-2.5 !text-xs">Book Now</Button>
           </div>
         </div>
 
@@ -122,7 +122,7 @@ const Navbar = () => {
               {item.label}
             </Link>
           ))}
-          <Button variant="primary" className="mt-8 w-full max-w-xs">Inquire Now</Button>
+          <Button to="/book-now" variant="primary" className="mt-8 w-full max-w-xs" onClick={() => setIsMobileMenuOpen(false)}>Book Now</Button>
         </div>
       </div>
     </nav>

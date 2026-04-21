@@ -12,12 +12,25 @@ import EditorialSection from '../components/EditorialSection';
 import CTA from '../components/CTA';
 import Advantages from '../components/Advantages';
 import { useHomeViewModel } from '../viewModel/useHomeViewModel';
+import gsap from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+
+gsap.registerPlugin(ScrollTrigger);
 
 const HomeView = () => {
   const { 
     hero, logoStrip, features, about, process, 
     artifacts, pricing, testimonials, editorial, cta 
   } = useHomeViewModel();
+
+  React.useEffect(() => {
+    // Refresh ScrollTrigger after a short delay to account for image loads and layout shifts
+    const timer = setTimeout(() => {
+      ScrollTrigger.refresh();
+    }, 1000);
+
+    return () => clearTimeout(timer);
+  }, []);
 
   return (
     <main className="min-h-screen">

@@ -2,6 +2,8 @@ import React, { useRef, useEffect } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
+gsap.registerPlugin(ScrollTrigger);
+
 const ProcessTimeline = ({ data }) => {
   const root = useRef();
 
@@ -10,13 +12,15 @@ const ProcessTimeline = ({ data }) => {
       gsap.from(".process-item", {
         scrollTrigger: {
           trigger: root.current,
-          start: "top 70%",
+          start: "top 85%",
+          toggleActions: "play none none none"
         },
         x: -40,
         opacity: 0,
         duration: 1,
         stagger: 0.25,
-        ease: "power2.out"
+        ease: "power2.out",
+        clearProps: "all"
       });
     }, root);
 

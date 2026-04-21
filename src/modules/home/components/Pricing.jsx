@@ -2,6 +2,9 @@ import React, { useRef, useEffect } from 'react';
 import { Check } from 'lucide-react';
 import Button from '../../../components/common/Button';
 import gsap from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+
+gsap.registerPlugin(ScrollTrigger);
 
 const Pricing = ({ data }) => {
   const root = useRef();
@@ -11,13 +14,15 @@ const Pricing = ({ data }) => {
       gsap.from(".pricing-card", {
         scrollTrigger: {
           trigger: root.current,
-          start: "top 70%",
+          start: "top 85%",
+          toggleActions: "play none none none"
         },
         y: 40,
         opacity: 0,
         duration: 0.8,
         stagger: 0.15,
-        ease: "back.out(1.2)"
+        ease: "back.out(1.2)",
+        clearProps: "all"
       });
     }, root);
 

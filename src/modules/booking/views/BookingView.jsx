@@ -4,6 +4,8 @@ import Navbar from '../../../components/common/Navbar';
 import { ChevronLeft } from 'lucide-react';
 
 const BookingView = () => {
+  const [isLoading, setIsLoading] = React.useState(true);
+
   useEffect(() => {
     window.scrollTo(0, 0);
 
@@ -54,10 +56,10 @@ const BookingView = () => {
 
             {/* Form Outer Container */}
             <div className="relative">
-              <div style={{ backgroundColor: '#ffffff' }} className="relative rounded-[2rem] overflow-hidden shadow-[0_8px_30px_rgb(0,0,0,0.04)]">
+              <div className="relative rounded-[2rem] overflow-hidden shadow-[0_8px_30px_rgb(0,0,0,0.04)] bg-white min-h-[600px]">
                 
                 {/* Form Progress/Safe Label */}
-                <div style={{ backgroundColor: '#ffffff' }} className="flex items-center justify-between px-8 py-5 border-b border-gray-50">
+                <div className="flex items-center justify-between px-8 py-5 border-b border-gray-50 bg-white">
                   <div className="flex gap-1.5">
                     <div className="w-2 h-2 rounded-full bg-primary/40"></div>
                     <div className="w-2 h-2 rounded-full bg-outline-variant"></div>
@@ -70,20 +72,23 @@ const BookingView = () => {
                 </div>
 
                 {/* Loading Placeholder */}
-                <div className="absolute inset-0 flex items-center justify-center -z-10 bg-surface-container py-60">
-                  <div className="flex flex-col items-center gap-6">
-                    <div className="relative w-16 h-16">
-                      <div className="absolute inset-0 border-4 border-primary/10 rounded-full"></div>
-                      <div className="absolute inset-0 border-4 border-t-primary rounded-full animate-spin"></div>
+                {isLoading && (
+                  <div className="absolute inset-0 z-50 flex items-center justify-center bg-white py-60">
+                    <div className="flex flex-col items-center gap-6">
+                      <div className="relative w-16 h-16">
+                        <div className="absolute inset-0 border-4 border-primary/10 rounded-full"></div>
+                        <div className="absolute inset-0 border-4 border-t-primary rounded-full animate-spin"></div>
+                      </div>
+                      <p className="font-label text-xs uppercase tracking-[0.4em] font-bold opacity-30 animate-pulse text-primary">Initializing Studio Access</p>
                     </div>
-                    <p className="font-label text-xs uppercase tracking-[0.4em] font-bold opacity-30 animate-pulse text-primary">Initializing Studio Access</p>
                   </div>
-                </div>
+                )}
 
                 <iframe
                   id="JotFormIFrame-252603933683057"
                   title="Capture Homes Booking Form"
                   onLoad={() => {
+                    setIsLoading(false);
                     window.parent.scrollTo(0,0);
                   }}
                   allowTransparency="true"
@@ -96,8 +101,9 @@ const BookingView = () => {
                     height: '800px', 
                     border: 'none',
                     backgroundColor: 'transparent',
-                    // clipPath: 'inset(0 0 85px 0)',
-                    // marginBottom: '-85px'
+                    visibility: isLoading ? 'hidden' : 'visible',
+                    opacity: isLoading ? 0 : 1,
+                    transition: 'opacity 0.5s ease-in-out'
                   }}
                   scrolling="no"
                 />
