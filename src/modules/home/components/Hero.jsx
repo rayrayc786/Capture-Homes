@@ -36,7 +36,7 @@ const Hero = ({ data }) => {
   }, []);
 
   return (
-    <section ref={root} className="relative min-h-[90vh] flex items-center pt-32 pb-16 overflow-hidden">
+    <section id="home" ref={root} className="relative min-h-[90vh] flex items-center pt-32 pb-16 overflow-hidden">
       {/* Abstract Background Detail */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[120%] h-[120%] opacity-20 pointer-events-none">
         <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(circle_at_center,var(--color-primary)_0%,transparent_70%)] blur-[120px]" />
@@ -61,11 +61,11 @@ const Hero = ({ data }) => {
         </p>
 
         <div ref={buttonsRef} className="flex flex-col sm:flex-row items-center justify-center gap-6">
-          <Button variant="primary" className="group flex items-center gap-2 min-w-[200px]">
+          <Button to="/book-now" variant="primary" className="group flex items-center gap-2 min-w-[200px]">
             {data.cta}
             <ChevronRight size={18} className="group-hover:translate-x-1 transition-transform" />
           </Button>
-          <Button variant="secondary" className="group flex items-center gap-2 min-w-[200px]">
+          <Button to="/#pricing" variant="secondary" className="group flex items-center gap-2 min-w-[200px]">
             {data.secondaryCta}
             <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
           </Button>

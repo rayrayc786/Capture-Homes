@@ -3,7 +3,7 @@ import Button from '../../../components/common/Button';
 
 const CTA = ({ data }) => {
   return (
-    <section className="py-24 md:py-40 bg-on-background text-background overflow-hidden relative border-t border-white/5">
+    <section id="book-now" className="py-24 md:py-40 bg-on-background text-background overflow-hidden relative border-t border-white/5">
       {/* Background Decorative Graphic */}
       <div className="absolute right-[-10%] top-1/2 -translate-y-1/2 w-[600px] h-[600px] border-[60px] border-primary/5 rounded-full pointer-events-none" />
       
@@ -19,7 +19,11 @@ const CTA = ({ data }) => {
           </div>
           
           <div className="shrink-0">
-            <Button variant="primary" className="!px-12 !py-6 text-base shadow-2xl shadow-primary/20 hover:scale-105 active:scale-95 transition-all">
+            <Button 
+              to="/book-now"
+              variant="primary" 
+              className="!px-12 !py-6 text-base shadow-2xl shadow-primary/20 hover:scale-105 active:scale-95 transition-all"
+            >
               {data.buttonText}
             </Button>
           </div>

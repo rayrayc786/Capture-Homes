@@ -2,7 +2,7 @@ import React from 'react';
 
 const ArtifactsGallery = ({ data }) => {
   return (
-    <section id="portfolio" class="py-32 px-6 md:px-12 bg-surface">
+    <section id="gallery" class="py-32 px-6 md:px-12 bg-surface">
       <div class="container mx-auto">
         <div class="flex flex-col md:flex-row justify-between items-start md:items-end mb-20 gap-8">
           <div>

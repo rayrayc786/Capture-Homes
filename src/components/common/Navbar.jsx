@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { Link, useLocation } from 'react-router-dom';
 import { Moon, Sun, Menu, X } from 'lucide-react';
 import Button from './Button';
 
@@ -6,6 +7,7 @@ const Navbar = () => {
   const [isDark, setIsDark] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const location = useLocation();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -20,6 +22,15 @@ const Navbar = () => {
     document.documentElement.classList.toggle('dark');
   };
 
+  const navLinks = [
+    { label: 'Home', href: '/', isHash: false },
+    { label: 'Gallery', href: '/#gallery', isHash: true },
+    { label: 'Price List', href: '/#pricing', isHash: true },
+    { label: 'About Us', href: '/#about', isHash: true },
+    { label: 'Book Now', href: '/book-now', isHash: false },
+    { label: 'Contact Us', href: '/#contact', isHash: true }
+  ];
+
   return (
     <nav 
       className={`fixed top-0 left-0 w-full z-50 transition-all duration-500 ${
@@ -30,30 +41,39 @@ const Navbar = () => {
     >
       <div className="container mx-auto px-6 md:px-12 flex justify-between items-center">
         {/* Logo */}
-        <div className="flex items-center gap-2">
-          <div className="w-8 h-8 bg-primary rounded-lg flex items-center justify-center font-display font-black text-on-primary">
+        <Link to="/" className="flex items-center gap-2 group">
+          <div className="w-8 h-8 bg-primary rounded-lg flex items-center justify-center font-display font-black text-on-primary group-hover:scale-110 transition-transform">
             C
           </div>
           <span className="font-display font-extrabold text-xl tracking-tighter uppercase whitespace-nowrap text-on-background">
             Capture Homes
           </span>
-        </div>
+        </Link>
 
         {/* Desktop Links */}
-        <div className="hidden md:flex items-center gap-10">
-          {[
-            { label: 'Portfolio', href: '#portfolio' },
-            { label: 'Process', href: '#process' },
-            { label: 'Editorial', href: '#editorial' },
-            { label: 'About', href: '#about' }
-          ].map((item) => (
-            <a 
-              key={item.label} 
-              href={item.href}
-              className="text-sm font-label font-medium text-on-background/70 hover:text-primary transition-colors tracking-wide"
-            >
-              {item.label}
-            </a>
+        <div className="hidden md:flex items-center gap-8">
+          {navLinks.map((item) => (
+            item.isHash && location.pathname === '/' ? (
+              <a 
+                key={item.label} 
+                href={item.href.replace('/', '')}
+                className="text-xs font-label font-bold text-on-background/70 hover:text-primary transition-all tracking-widest uppercase"
+              >
+                {item.label}
+              </a>
+            ) : (
+              <Link 
+                key={item.label} 
+                to={item.href}
+                className={`text-xs font-label font-bold tracking-widest uppercase transition-all ${
+                  location.pathname === item.href 
+                    ? 'text-primary' 
+                    : 'text-on-background/70 hover:text-primary'
+                }`}
+              >
+                {item.label}
+              </Link>
+            )
           ))}
           
           <div className="flex items-center gap-4 pl-6 border-l border-outline-variant">
@@ -89,23 +109,20 @@ const Navbar = () => {
       <div className={`fixed inset-0 bg-background z-40 transition-transform duration-500 md:hidden ${
         isMobileMenuOpen ? 'translate-x-0' : 'translate-x-full'
       }`}>
-        <div className="flex flex-col items-center justify-center h-full gap-8">
-          {[
-            { label: 'Portfolio', href: '#portfolio' },
-            { label: 'Process', href: '#process' },
-            { label: 'Editorial', href: '#editorial' },
-            { label: 'About', href: '#about' }
-          ].map((item) => (
-            <a 
+        <div className="flex flex-col items-center justify-center h-full gap-6 px-6">
+          {navLinks.map((item) => (
+            <Link 
               key={item.label} 
-              href={item.href}
-              className="text-2xl font-display font-bold uppercase tracking-tighter"
+              to={item.href}
+              className={`text-3xl font-display font-black uppercase tracking-tighter transition-colors ${
+                location.pathname === item.href ? 'text-primary' : 'hover:text-primary'
+              }`}
               onClick={() => setIsMobileMenuOpen(false)}
             >
               {item.label}
-            </a>
+            </Link>
           ))}
-          <Button variant="primary" className="mt-4">Inquire Now</Button>
+          <Button variant="primary" className="mt-8 w-full max-w-xs">Inquire Now</Button>
         </div>
       </div>
     </nav>

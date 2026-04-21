@@ -74,13 +74,13 @@ const Pricing = ({ data }) => {
                 ))}
               </div>
 
-              <button className={`w-full py-4 px-8 rounded-full font-black text-xs uppercase tracking-widest transition-all duration-300 ${
-                plan.isPopular 
-                  ? 'bg-primary text-on-primary hover:bg-primary-container hover:text-on-primary-container shadow-lg shadow-primary/20' 
-                  : 'border border-outline hover:bg-on-surface hover:text-surface'
-              }`}>
+              <Button 
+                to="/book-now"
+                variant={plan.isPopular ? 'primary' : 'outline'}
+                className="w-full"
+              >
                 {plan.buttonText || 'Begin Journey'}
-              </button>
+              </Button>
             </div>
           ))}
         </div>

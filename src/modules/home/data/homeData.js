@@ -1,133 +1,152 @@
 export const homeData = {
   hero: {
-    eyebrow: "CAPTURE HOMES",
-    title: "The New Era of Architectural Storytelling",
-    description: "Capturing the architectural soul and cinematic atmosphere of premium properties. We transform spaces into narratives through light, shadow, and intentional composition.",
-    cta: "View Our Work",
-    secondaryCta: "Our Philosophy"
+    eyebrow: "CAPTURE HOMES STUDIO",
+    title: "Auckland Real Estate Media That Helps You Win More Listings",
+    description: "High-end photography, cinematic video & reels designed to make your properties stand out and sell faster.",
+    cta: "Book a Shoot",
+    secondaryCta: "View Portfolio"
   },
   features: {
-    eyebrow: "DISCIPLINES",
-    title: "Expertise in Visual Excellence",
+    eyebrow: "OUR SERVICES",
+    title: "Comprehensive Visual Solutions",
     items: [
       {
         id: 1,
-        title: "Architectural Capture",
-        description: "Static visual narratives that treat property photography as a fine art gallery experience.",
+        title: "Photography",
+        description: "Simple, yet stunning visuals that showcase the unique features of each property.",
         image: "https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?q=80&w=2070&auto=format&fit=crop"
       },
       {
         id: 2,
-        title: "Cinematic Motion",
-        description: "Fluid property films that mimic the atmosphere of high-end editorial cinema.",
+        title: "Videography",
+        description: "Cinematic storytelling that captures the essence of homes, creating a lasting impression.",
         image: "https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?q=80&w=2070&auto=format&fit=crop"
       },
       {
         id: 3,
-        title: "Editorial Curation",
-        description: "Post-production mastery focused on tonal depth, soft light, and textural richness.",
-        image: "https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?q=80&w=1974&auto=format&fit=crop"
+        title: "Floor Plans",
+        description: "Detailed and accurate layouts to provide a comprehensive view of the property.",
+        image: "https://images.unsplash.com/photo-1503387762-592dea58ef21?q=80&w=2000&auto=format&fit=crop"
+      },
+      {
+        id: 4,
+        title: "Virtual Staging",
+        description: "Transform empty spaces into inviting homes with our professional virtual staging.",
+        image: "https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?q=80&w=2000&auto=format&fit=crop"
+      },
+      {
+        id: 5,
+        title: "Agent Media",
+        description: "Headshots and profile videos that convey trust, credibility, and personality.",
+        image: "https://images.unsplash.com/photo-1560250097-0b93528c311a?q=80&w=2000&auto=format&fit=crop"
+      },
+      {
+        id: 6,
+        title: "Drone Photography",
+        description: "Breathtaking aerial views highlighting the property and its beautiful surroundings.",
+        image: "https://images.unsplash.com/photo-1500382017468-9049fed747ef?q=80&w=2000&auto=format&fit=crop"
       }
     ]
   },
   process: [
     {
       number: "01",
-      title: "Immersion",
-      description: "We identify the silent signals that define a home's identity, transcending superficial aesthetics for deep-rooted visual alignment."
+      title: "Book your shoot",
+      description: "Simple online booking with no cancellation or reschedule fees."
     },
     {
       number: "02",
-      title: "Structural Sculpting",
-      description: "We carve out the digital space, treating every pixel of silence with the same reverence as the architectural content it holds."
+      title: "We capture",
+      description: "Professional enthusiasts set out to transform the way your property is presented."
     },
     {
       number: "03",
-      title: "Ethereal Application",
-      description: "Layering tonal shifts and ghost borders to create a soft-edge experience that feels cinematic and effortless."
+      title: "Next Day Delivery",
+      description: "Fast 24hr turnaround to get your listings live as quickly as possible."
     },
     {
       number: "04",
-      title: "Final Curation",
-      description: "The final refinement, where every movement is calibrated to achieve a bespoke, high-end gallery feel."
+      title: "Unlimited Changes",
+      description: "We work until you are satisfied, ensuring unbeatable advantages for your marketing."
     }
   ],
   pricing: {
-    title: "Investment in Legacy",
+    title: "Unbeatable Value",
     plans: [
       {
         id: 1,
-        tier: "Tier 01",
-        name: "Essential",
-        price: "$8.5k",
-        description: "Foundation for emerging visionaries.",
+        tier: "Base",
+        name: "Silver Package",
+        price: "$499",
+        description: "Professional photography with next working day delivery. (+GST)",
         features: [
-          "Strategic Brand Foundation",
-          "High-Contrast Digital Interface",
-          "Mobile Responsive Architecture",
-          "2 Core Editorial Directions"
+          "Complimentary Decluttering",
+          "No Travel Costs",
+          "Flexible Rescheduling",
+          "Next Day Delivery"
         ],
         isPopular: false,
-        buttonText: "Begin Journey"
+        buttonText: "Book Silver"
       },
       {
         id: 2,
-        tier: "Tier 02",
-        name: "Professional",
-        price: "$15k",
-        description: "Comprehensive digital transformation.",
+        tier: "Popular",
+        name: "Gold Package",
+        price: "$599",
+        description: "Premium visual storytelling with free headshot for first booking. (+GST)",
         features: [
-          "Complete Visual Identity System",
-          "Advanced Interaction Sculpting",
-          "Ethereal Motion Design",
-          "Content Strategy & Copywriting"
+          "Unlimited Changes",
+          "Free First Headshot",
+          "No hidden hourly fees",
+          "Weekend-Ready Service"
         ],
         isPopular: true,
-        buttonText: "Secure Access"
+        buttonText: "Book Gold"
       },
       {
         id: 3,
-        tier: "Tier 03",
-        name: "Signature",
-        price: "$35k+",
-        description: "Bespoke legacy for industry leaders.",
+        tier: "Custom",
+        name: "Bespoke Suite",
+        price: "Quote",
+        description: "Tailored solutions including Virtual Staging and Area Mapping.",
         features: [
-          "Full Digital Architecture Suite",
-          "Bespoke Artifact Photography",
-          "Multi-Dimensional Brand Film",
-          "Lifetime Creative Direction"
+          "Virtual Staging",
+          "Agent Profile Video",
+          "Day to Dusk Photos",
+          "Area Mapping"
         ],
         isPopular: false,
-        buttonText: "Partner with us"
+        buttonText: "Request Quote"
       }
     ]
   },
   testimonials: [
     {
-      quote: "Capture Homes didn't just photograph our project; they built a digital monument. Their eye for detail and commitment to cinematic quality is unmatched in the industry.",
+      quote: "Capture Homes delivers a hassle-free experience with top-notch services. Their commitment to 'no hidden costs' and 'unlimited changes' is absolutely unbeatable.",
       author: "Julian Vane",
       role: "CEO, VANE & ASSOCIATES",
       avatar: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?q=80&w=2070&auto=format&fit=crop"
     }
   ],
   cta: {
-    title: "LET'S BUILD SOMETHING ICONIC.",
-    subtitle: "Ready to transform your brand into a digital legacy?",
+    title: "READY TO ELEVATE YOUR LISTINGS?",
+    subtitle: "Contact us today to discuss how we can enhance your real estate visual marketing strategy.",
     buttonText: "Get in Touch"
   },
   logoStrip: [
-    "AETHER", "VOX LUX", "MUSEUM+", "SILK STUDIO", "ORBITAL"
+    "RAY WHITE", "BAYLEYS", "HARCOURTS", "BARFOOT", "RE/MAX"
   ],
   about: {
     eyebrow: "OUR STORY",
-    title: "A studio for the visually ambitious.",
-    description: "Capture Homes was founded on the belief that property marketing has become too mechanical. We reject the grid when it limits creativity, and we embrace tonal layering over harsh borders.",
+    title: "Elevating Auckland's Visuals since 2022",
+    description: "Founded Feb 2022, Capture Homes is your comprehensive solution for real estate visual marketing. We understand the power of first impressions and have been proudly serving the Auckland community for over two years.",
     stats: [
-      { label: "Homes Captured", value: "120+" },
-      { label: "Global Awards", value: "18" }
+      { label: "Founded", value: "FEB 2022" },
+      { label: "Community", value: "AUCKLAND" },
+      { label: "Turnaround", value: "24HR" }
     ],
-    quote: "Where white space meets world-class design.",
-    since: "SINCE 2014",
+    quote: "Elevate Your Listings, Simplify Your Experience.",
+    since: "EST. 2022",
     image: "https://images.unsplash.com/photo-1497366216548-37526070297c?q=80&w=2069&auto=format&fit=crop"
   },
   artifacts: {
@@ -136,29 +155,29 @@ export const homeData = {
     items: [
       {
         id: 1,
-        category: "URBANISM",
-        title: "Tokyo Verticals",
+        category: "EXTERIORS",
+        title: "Modern Auckland Villa",
         image: "https://images.unsplash.com/photo-1540959733332-eab4deabeeaf?q=80&w=2094&auto=format&fit=crop",
         cols: "md:col-span-8"
       },
       {
         id: 2,
         category: "INTERIORS",
-        title: "Sphere Study",
+        title: "Parnell Penthouse",
         image: "https://images.unsplash.com/photo-1518005020251-5421da65e8a0?q=80&w=2070&auto=format&fit=crop",
         cols: "md:col-span-4"
       },
       {
         id: 3,
-        category: "PRODUCT",
-        title: "Minimal Tech",
+        category: "DEVELOPMENTS",
+        title: "Urban Loft Series",
         image: "https://images.unsplash.com/photo-1491933382434-500287f9b54b?q=80&w=2024&auto=format&fit=crop",
         cols: "md:col-span-4"
       },
       {
         id: 4,
-        category: "ART DIRECTION",
-        title: "Vellum Series",
+        category: "CINEMATIC",
+        title: "Coastal Sanctuary",
         image: "https://images.unsplash.com/photo-1541746972996-4e0b0f43e02a?q=80&w=2070&auto=format&fit=crop",
         cols: "md:col-span-8"
       }

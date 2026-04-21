@@ -59,3 +59,24 @@
   opacity: 0;
   transform: translateY(30px);
 }
+
+@keyframes marquee {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-marquee {
+  display: flex !important;
+  width: max-content !important;
+  animation: marquee 60s linear infinite;
+  @apply flex-nowrap;
+}
+
+.animate-marquee:hover {
+  animation-play-state: paused;
+}
+
